@@ -1,0 +1,10 @@
+{% if topic %}
+  {% set my_topics = blog_topics(node.contentGroupId, 250) %}
+  {% for item in my_topics %}
+      {% if topic == item.slug %}
+        {{ item }}
+      {% endif %}
+  {% endfor %}
+{% else %}
+    {{ group.public_title }}
+{% endif %}
